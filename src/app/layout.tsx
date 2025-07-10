@@ -1,5 +1,9 @@
 import Footer from "@/app/_components/footer";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import {
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  HOME_OG_IMAGE_URL,
+} from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import cn from "classnames";
@@ -10,10 +14,22 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
   openGraph: {
-    images: [HOME_OG_IMAGE_URL],
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: "https://meowfijournal.vercel.app",
+    siteName: SITE_NAME,
+    images: [
+      {
+        url: HOME_OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
 };
 
